@@ -4,8 +4,8 @@
   "description": "build TibetDoc/Sambotha to unicode converter app by electron",
   "main": "main.js",
   "scripts": {
-    "test": "electron .",
-    "start": "electron-packager . sambotha-converter --all --overwrite"
+    "dev": "electron .",
+    "build": "electron-packager . sambotha-converter --all --overwrite"
   },
   "repository": {
     "type": "git",
