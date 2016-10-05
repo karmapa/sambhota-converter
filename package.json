@@ -1,7 +1,7 @@
 {
   "name": "converter-app",
   "version": "0.0.1",
-  "description": "build TibetDoc/Sambotha to unicode converter app by electron",
+  "description": "build Sambotha to unicode converter app by electron",
   "main": "main.js",
   "scripts": {
     "dev": "electron .",
