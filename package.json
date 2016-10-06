@@ -4,7 +4,10 @@
   "description": "build Sambotha to unicode converter app by electron",
   "main": "main.js",
   "scripts": {
-    "dev": "electron .",
+    "lint": "eslint *.js",
+    "dev": "webpack-dev-server --progress --colors --hot --inline",
+    "webpack": "webpack",
+    "pack-dev": "electron ./dist",
     "build": "electron-packager . sambotha-converter --all --overwrite"
   },
   "repository": {
