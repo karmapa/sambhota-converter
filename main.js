@@ -2,7 +2,7 @@ const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+const BrowserWindow = electron.BrowserWindow;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,7 +13,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: size.width, height: size.height});
 
   // and load the index.html of the app.
-  mainWindow.loadURL('file://' + __dirname + '/src/sambotha/sambotha.html');
+  mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
   //mainWindow.loadURL('file://' + __dirname + '/src/tibetdoc/tibetdoc.html');
 
   // Open the DevTools.
@@ -49,7 +49,7 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
+  if (null === mainWindow) {
     createWindow();
   }
 });
