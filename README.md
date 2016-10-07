@@ -1,24 +1,13 @@
-# converter-app
-build TibetDoc/Sambotha to unicode converter app by electron
+# Sambotha converter
+Sambotha to unicode converter app by electron
 
-##branch
-sambotha
-```
-git checkout master
-```
 
-tibetdoc
+webpack
 ```
-git checkout tibetdoc
+npm run webpack
 ```
 
-##useage
-run in dev mode
-```
-npm run dev
-```
-
-build electron-packager
+electron pack
 ```
 npm run build
 ```
