@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --progress --colors --hot --inline",
     "webpack": "webpack",
     "pack-dev": "electron ./dist",
-    "build": "electron-packager . sambotha-converter --all --overwrite"
+    "build": "./bin/build.sh"
   },
   "repository": {
     "type": "git",
