@@ -2,11 +2,11 @@
   padding: 2px 3px 2px 3px;
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid #DDDDDD;
+  border: 2px solid #dddddd;
 }
 
 .buttonText {
-  background-color: #F6F7F9;
+  background-color: #f6f7f9;
 }
 
 #downBar {
@@ -17,16 +17,20 @@
   padding-right: 10px;
 }
 
+.divLine {
+  border-top: solid 0.5px #000000;
+}
+
 #reload {
   display: none;
-  background: #F6F7F9;
+  background: #f6f7f9;
   padding: 2px;
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid #DDDDDD;
+  border: 2px solid #dddddd;
 }
 
-#output {
+#result {
   font-size: 18pt;
   font-family: Microsoft Himalaya;
 }
