@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ELECTRON_VERSION=1.3.4
+
 cd dist
 sed -i '' 's/http:\/\/localhost:8080/\./g' index.html
 rm -rf sambotha-converter-*
