@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ELECTRON_VERSION=1.3.4
+FOLDER_ID=0B9GraSYa0W12cjJFNF
 
 cd dist
 sed -i '' 's/http:\/\/localhost:8080/\./g' index.html
