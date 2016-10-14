@@ -12,4 +12,6 @@ cp -r package.json main.js dist/
 cd dist
 sed -i '' 's/http:\/\/localhost:8080/\./g' index.html
 
-electron-packager . sambotha-converter-v0.0.1 --platform=darwin,win32 --arch=x64 --overwrite
+electron-packager . sambotha-converter --platform=darwin,win32 --arch=x64 --version="${ELECTRON_VERSION}" --app-version="${PACKAGE_VERSION}"
+zip -r "${ZIP_WIN}" sambotha-converter-win32-x64
+zip -r "${ZIP_IOS}" sambotha-converter-win32-x64
