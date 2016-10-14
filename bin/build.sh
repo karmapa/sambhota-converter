@@ -14,4 +14,6 @@ sed -i '' 's/http:\/\/localhost:8080/\./g' index.html
 
 electron-packager . sambotha-converter --platform=darwin,win32 --arch=x64 --version="${ELECTRON_VERSION}" --app-version="${PACKAGE_VERSION}"
 zip -r "${ZIP_WIN}" sambotha-converter-win32-x64
+gdrive upload "${ZIP_WIN}" -p "${FOLDER_ID}"
 zip -r "${ZIP_IOS}" sambotha-converter-win32-x64
+gdrive upload "${ZIP_IOS}" -p "${FOLDER_ID}"
