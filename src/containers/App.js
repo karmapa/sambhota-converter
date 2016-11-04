@@ -36,7 +36,7 @@ class App extends Component {
       let doc = sambothaParser.docxToJson(xml);
       sambothaParser.toUnicode(doc);
       data = sambothaParser.jsonToHtml(doc);
-      data = data.replace(/<p>/g, '\n').replace(/<.+?>/g, '').replace(/^\r?\n/g, '');
+      data = sambothaParser.HTMLToText(data);
       var downLoad = new Blob([data], {encoding: 'utf8', type: 'text/html'});
       var url = URL.createObjectURL(downLoad);
       this.setState({
