@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import sambothaParser from 'sambotha-parser';
-import JSZip from 'jszip';
-
 
 class App extends Component {
   constructor() {
@@ -34,8 +32,7 @@ class App extends Component {
     const fileReader = this.fileReader;
     fileReader.onload = () => {
       let data = fileReader.result;
-      const zip = new JSZip(data);
-      const xml = zip.file('word/document.xml').asText();
+      const xml = sambothaParser.docxToXml(data);
       let doc = sambothaParser.docxToJson(xml);
       sambothaParser.toUnicode(doc);
       data = sambothaParser.jsonToHtml(doc);
