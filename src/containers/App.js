@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
 import sambhotaParser from 'sambhota-parser';
+import {DropdownButton, MenuItem, Nav, Navbar} from 'react-bootstrap';
+import bo from '../langs/bo.json';
+import en from '../langs/en.json';
+import zhCN from '../langs/zh-CN.json';
+import zhTW from '../langs/zh-TW.json';
+
+const footerLogoImage = require('./footer-logo.png');
 
 class App extends Component {
   constructor() {
