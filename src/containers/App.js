@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import sambothaParser from 'sambotha-parser';
+import sambhotaParser from 'sambhota-parser';
 
 class App extends Component {
   constructor() {
@@ -32,11 +32,11 @@ class App extends Component {
     const fileReader = this.fileReader;
     fileReader.onload = () => {
       let data = fileReader.result;
-      const xml = sambothaParser.docxToXml(data);
-      let doc = sambothaParser.docxToJson(xml);
-      sambothaParser.toUnicode(doc);
-      data = sambothaParser.jsonToHtml(doc);
-      data = sambothaParser.HTMLToText(data);
+      const xml = sambhotaParser.docxToXml(data);
+      let doc = sambhotaParser.docxToJson(xml);
+      sambhotaParser.toUnicode(doc);
+      data = sambhotaParser.jsonToHtml(doc);
+      data = sambhotaParser.HTMLToText(data);
       var downLoad = new Blob([data], {encoding: 'utf8', type: 'text/html'});
       var url = URL.createObjectURL(downLoad);
       this.setState({
@@ -68,7 +68,7 @@ class App extends Component {
     }
     return (
       <div>
-        <h1>Sambotha to unicode converter</h1>
+        <h1>Sambhota to unicode converter</h1>
         <input type="file" id="fileInput" onChange={this.converter} accept=".docx" />
         <div id="downBar">
           {downLink}
