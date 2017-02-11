@@ -56,6 +56,7 @@ class App extends Component {
       var url = URL.createObjectURL(downLoad);
       this.setState({
         output: data,
+        input: file.name,
         downLoadOptions:{
           href: url,
           target: '_blank',
@@ -87,7 +88,7 @@ class App extends Component {
       <div className="upLoadButton">
         <div className="fileLoad btn-primary">
           <span className="glyphicon glyphicon-open-file">upload</span>
-          <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+          <input type="file" id="fileInput" onChange={this.converter} accept=".dct, .docx" />
         </div>
       </div>
     );
@@ -97,7 +98,7 @@ class App extends Component {
         <div className="upAndDownButton">
           <div className="fileLoad anti btn-primary">
             <span className="glyphicon glyphicon-open-file" aria-hidden="true">upload</span>
-            <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+            <input type="file" id="fileInput" onChange={this.converter} accept=".dct, .docx" />
           </div>
           <a {...options}>
             <div className="fileDownload btn-primary">
@@ -110,7 +111,7 @@ class App extends Component {
 
     let fileInfo = (
       <div className="fileType">
-      Upload a file, type: docx, txt
+      Upload a file, type: docx, dct
       </div>
     );
     if (this.state.output) {
