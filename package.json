@@ -1,39 +1,38 @@
 {
-  "name": "sambotha-converter",
+  "name": "sambhota-converter",
   "version": "0.0.1",
-  "description": "build Sambotha to unicode converter app by electron",
+  "description": "build sambhota to unicode converter app by electron",
   "main": "main.js",
   "scripts": {
     "lint": "eslint *.js",
     "dev": "webpack-dev-server --progress --colors --hot --inline",
-    "webpack": "webpack",
     "pack-dev": "electron ./dist",
     "build": "./bin/build.sh",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karmapa/sambotha-converter.git"
+    "url": "git+https://github.com/karmapa/sambhota-converter.git"
   },
   "keywords": [
     "electron",
     "converter",
     "TibetDoc",
-    "Sambotha",
+    "sambhota",
     "app"
   ],
   "author": "karmapa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/karmapa/sambotha-converter/issues"
+    "url": "https://github.com/karmapa/sambhota-converter/issues"
   },
-  "homepage": "https://github.com/karmapa/sambotha-converter#readme",
+  "homepage": "https://github.com/karmapa/sambhota-converter#readme",
   "dependencies": {
     "electron": "1.3.4",
     "jszip": "2.6.0",
     "react": "15.3.2",
     "react-dom": "15.3.2",
-    "sambotha-parser": "https://github.com/karmapa/sambotha-parser.git#97f3dde"
+    "sambhota-parser": "https://github.com/karmapa/sambhota-parser.git#2455d04"
   },
   "devDependencies": {
     "babel-core": "6.7.7",
