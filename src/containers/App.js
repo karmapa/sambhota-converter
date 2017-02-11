@@ -12,6 +12,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      currentLangTitle: {json: en, title: 'English'},
+      langList: {
+        'en': {json: en, title: 'English'},
+        'bo': {json: bo, title: 'བོད་སྐད།'},
+        'tw': {json: zhTW, title: '繁體中文'},
+        'cn': {json: zhCN, title: '简体中文'}
+      },
+      input: '',
       output: '',
       downLoadOptions: {
         href: '',
@@ -58,30 +66,159 @@ class App extends Component {
     fileReader.readAsBinaryString(file);
   }
 
+  langSelect = (key) => {
+    this.setState({
+      currentLangTitle: this.state.langList[key]
+    });
+  }
+
   render() {
+
+    const navTitle = (
+      <span>
+        <i className="fa fa-globe shifted" />
+        {this.state.currentLangTitle['title']}
+      </span>
+    );
+
+    const options = this.state.downLoadOptions;
+    let result = 'result';
+    let clickButton = (
+      <div className="upLoadButton">
+        <div className="fileLoad btn-primary">
+          <span className="glyphicon glyphicon-open-file">upload</span>
+          <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+        </div>
+      </div>
+    );
+    if (this.state.output) {
+      result = 'result render';
+      clickButton = (
+        <div className="upAndDownButton">
+          <div className="fileLoad anti btn-primary">
+            <span className="glyphicon glyphicon-open-file" aria-hidden="true">upload</span>
+            <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+          </div>
+          <a {...options}>
+            <div className="fileDownload btn-primary">
+              <span className="glyphicon glyphicon-save-file" aria-hidden="true">down</span>
+            </div>
+          </a>
+        </div>
+      );
+    }
+
+    let fileInfo = (
+      <div className="fileType">
+      Upload a file, type: docx, txt
+      </div>
+    );
+    if (this.state.output) {
+      let fileName = 'File name: ' + this.state.input;
+      fileInfo = (
+        <div>
+          <div className="fileName">{fileName}</div>
+          <div className="divLine" />
+        </div>
+      );
+    }
+    let intruText = 'intruText';
+    if (this.state.currentLangTitle['title'] === 'English') {
+      intruText = 'intruText';
+    } else {
+      intruText = 'intruText fontBigger';
+    }
+
     const dataInnerHTML = this.state.output.split('\n').map((str, idx) => {
       if (!str) {
         return;
       } else {
-        return <div className="lineBreak" key={idx}>{str}</div>;
+        return <div key={idx}>{str}</div>;
       }
     });
-    const options = this.state.downLoadOptions;
-    let downLink = '';
-    if (this.state.downLoadOptions.href !== '') {
-      downLink = <span><a id="downLink" {...options}>Download</a><span id="reload">X</span></span>;
-    } else {
-      downLink = '';
-    }
+
     return (
-      <div>
-        <h1>Sambhota to unicode converter</h1>
-        <input type="file" id="fileInput" onChange={this.converter} accept=".docx" />
-        <div id="downBar">
-          {downLink}
+      <div className="app">
+        <Navbar fixedTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <span className="brand" />
+              <span className="brandText">{this.state.currentLangTitle['json']['dharma-treasure']}</span>
+            </Navbar.Brand>
+            <Navbar.Toggle/>
+          </Navbar.Header>
+
+          <Navbar.Collapse>
+            <Nav navbar pullRight>
+              <DropdownButton id="dropdown-lang" bsStyle="link" title={navTitle}>
+                <MenuItem eventKey="en" onSelect={this.langSelect}>{this.state.langList['en']['title']}</MenuItem>
+                <MenuItem eventKey="bo" onSelect={this.langSelect}>{this.state.langList['bo']['title']}</MenuItem>
+                <MenuItem eventKey="tw" onSelect={this.langSelect}>{this.state.langList['tw']['title']}</MenuItem>
+                <MenuItem eventKey="cn" onSelect={this.langSelect}>{this.state.langList['cn']['title']}</MenuItem>
+              </DropdownButton>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
+        <div className="appContent">
+          <div className="intruduction">
+            <span className="intruImg" />
+            <div className="appDownLoad">
+              <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12YjJUVFlHU09wMFU" target="_blank">
+                <div className="downLoadButton">
+                  <i className="fa fa-cloud-download fa-lg" aria-hidden="true"></i> Mac
+                </div>
+              </a>
+              <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12WEZPd1pEQXBVdkk" target="_blank">
+                <div className="downLoadButton">
+                  <i className="fa fa-cloud-download fa-lg" aria-hidden="true"></i> PC
+                </div>
+              </a>
+            </div>
+            <div className="intruTitle">Sambhota to unicode converter</div>
+            <div className={intruText}>{this.state.currentLangTitle['json']['app-sambhota-to-unicode-converter-intro-content']}</div>
+          </div>
+          {clickButton}
+          {fileInfo}
+          <div className={result}>{dataInnerHTML}</div>
         </div>
-        <div className="divLine" />
-        <pre_><font id="result">{dataInnerHTML}</font></pre_>
+
+        <footer>
+          <section>
+            <div className="footerSection">
+              <div className="footerContent container clearfix">
+                <div className="row">
+                  <div className="footerLogo col-sm-6">
+                    <img src={footerLogoImage} alt="footer logo image" />
+                  </div>
+                  <div className="footerContact col-sm-6">
+                    <h2>
+                      {this.state.currentLangTitle['json']['contact-us']}
+                    </h2>
+                    <ul>
+                      <li>
+                        {this.state.currentLangTitle['json']['email']}
+                        <span>: dharma.treasure.corp@gmail.com</span>
+                      </li>
+                      <li>
+                        {this.state.currentLangTitle['json']['phone']}
+                        <span>: 02-27586828</span>
+                      </li>
+                      <li>
+                        {this.state.currentLangTitle['json']['address']}
+                        <span id="address-content">: {this.state.currentLangTitle['json']['address-content']}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="footerCompany">
+                  <i className="fa fa-fw fa-at" />
+                  <span>@2016 Dharma Treasure Corp. All right reserved.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </footer>
       </div>
     );
   }
