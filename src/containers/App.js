@@ -165,12 +165,12 @@ class App extends Component {
           <div className="intruduction">
             <span className="intruImg" />
             <div className="appDownLoad">
-              <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12YjJUVFlHU09wMFU" target="_blank">
+              <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12bE11UFdTTHh6WUU" target="_blank">
                 <div className="downLoadButton">
                   <i className="fa fa-cloud-download fa-lg" aria-hidden="true"></i> Mac
                 </div>
               </a>
-              <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12WEZPd1pEQXBVdkk" target="_blank">
+              <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12UkM1Y19RVl8xbm8" target="_blank">
                 <div className="downLoadButton">
                   <i className="fa fa-cloud-download fa-lg" aria-hidden="true"></i> PC
                 </div>
@@ -199,7 +199,7 @@ class App extends Component {
                     <ul>
                       <li>
                         {this.state.currentLangTitle['json']['email']}
-                        <span>: dharma.treasure.corp@gmail.com</span>
+                        <span>: support@dharma-treasure.org</span>
                       </li>
                       <li>
                         {this.state.currentLangTitle['json']['phone']}
