@@ -16,7 +16,7 @@ sed -i '' "s/className: 'appDownLoad'/className: 'appDownLoad none'/" bundle.js
 sed -i '' "s/className: 'intruTitle'/className: 'intruTitle noAppDownload'/" bundle.js
 
 
-electron-packager . sambotha-converter --platform=darwin,win32 --arch=x64 --version="${ELECTRON_VERSION}" --app-version="${PACKAGE_VERSION}"
+electron-packager . sambotha-converter --platform=darwin,win32 --arch=x64 --electron-version="${ELECTRON_VERSION}" --app-version="${PACKAGE_VERSION}"
 zip -r "${ZIP_WIN}" sambotha-converter-win32-x64
 gdrive upload "${ZIP_WIN}" -p "${FOLDER_ID}"
 zip -r "${ZIP_IOS}" sambotha-converter-darwin-x64
