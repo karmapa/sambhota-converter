@@ -111,7 +111,7 @@ class App extends Component {
 
     let fileInfo = (
       <div className="fileType">
-      Upload a file, type: docx
+      Upload a file, type (file extension) : .docx
       </div>
     );
     if (this.state.output) {
