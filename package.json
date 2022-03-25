@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/karmapa/sambhota-converter#readme",
   "dependencies": {
-    "electron": "10.1.1",
+    "electron": "13.6.6",
     "jszip": "2.6.0",
     "react": "0.14.7",
     "react-bootstrap": "0.30.7",
