@@ -36,7 +36,7 @@
     "sambhota-parser": "https://github.com/karmapa/sambhota-parser.git#7e5d784"
   },
   "devDependencies": {
-    "babel-core": "6.7.7",
+    "babel-core": "6.26.3",
     "babel-eslint": "6.0.4",
     "babel-jest": "16.0.0",
     "babel-loader": "6.2.4",
